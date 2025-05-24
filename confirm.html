@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Xác nhận thanh toán - Free Fire</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff;
+    }
+    .header {
+      padding: 10px 15px;
+      background: #fff;
+      border-bottom: 1px solid #ccc;
+    }
+    .banner {
+      width: 100%;
+      display: block;
+    }
+    .content {
+      padding: 15px;
+    }
+    .info-box {
+      margin-bottom: 15px;
+    }
+    .info-box h2 {
+      margin-bottom: 10px;
+    }
+    .info-box p {
+      margin: 5px 0;
+    }
+    .pay-button {
+      background: #e53935;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: gray;
+      font-size: 13px;
+    }
+    /* Modal */
+    #paymentModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #paymentModal .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+    #paymentModal img {
+      width: 100%;
+      max-width: 300px;
+      margin-top: 10px;
+    }
+    .close-btn {
+      margin-top: 15px;
+      background: #333;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <img class="banner" src="https://viettelmoney.vn/wp-content/uploads/2022/09/trung-tam-nap-the-updating.jpg" alt="banner">
+  </div>
+
+  <div class="content">
+    <div class="info-box">
+      <h2>Free Fire</h2>
+      <p><strong>Phương thức thanh toán:</strong> Gói Vinaphone SMS</p>
+      <p><strong>Sản phẩm được chọn:</strong> <span id="goi"></span></p>
+      <p><strong>Giá:</strong> <span id="gia"></span></p>
+      <p><strong>Id game của bạn:</strong> <span id="account"></span></p>
+    </div>
+
+    <button class="pay-button" onclick="showPayment()">Xử lý thanh toán</button>
+  </div>
+
+  <div id="paymentModal">
+    <div class="modal-content">
+      <h2>Chuyển khoản ngân hàng</h2>
+      <p><strong>Ngân hàng:</strong> Mbbank</p>
+      <p><strong>Chủ tài khoản:</strong> HUYNH LAM KHANG</p>
+      <p><strong>Số tài khoản:</strong> 14102091410235</p>
+      <img src="ma-qr-cua-ban.png" alt="QR Code chuyển khoản ( Bảo trì )">
+      <p> 
+        
+   Lưu ý: Sau khi chuyển khoản xong hệ thống tự cộng kim cương vào tài khoản, vui lòng thoát ra trang chính và chụp lại bill chuyển khoản với nội dung KIMCUONGRE để có thể xử lí trong trường hợp cần thiết nhé !!!
+      </p>
+      
+      <button class="close-btn" onclick="hidePayment()">Đóng</button>
+    </div>
+  </div>
+
+  <footer>
+    napthe.vn
+  </footer>
+
+  <script>
+    function getQueryParam(key) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(key) || '';
+    }
+
+    // Gán dữ liệu từ URL vào trang
+    document.getElementById('goi').textContent = getQueryParam('goi');
+    document.getElementById('gia').textContent = getQueryParam('gia');
+    document.getElementById('account').textContent = getQueryParam('account');
+
+    function showPayment() {
+      document.getElementById('paymentModal').style.display = 'flex';
+    }
+    function hidePayment() {
+      document.getElementById('paymentModal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

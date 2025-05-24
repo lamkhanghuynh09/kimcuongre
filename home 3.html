@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trang chủ - Nạp Free Fire X2 Kim Cương</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 15px;
+      background: #fff;
+      border-bottom: 1px solid #ccc;
+    }
+    .logo img {
+      height: 28px;
+    }
+    .menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .banner img {
+      width: 100%;
+      display: block;
+    }
+    .content {
+      padding: 15px;
+    }
+    .game-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .game-info img {
+      height: 50px;
+      margin-right: 10px;
+    }
+    .note {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+    .package {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      padding: 12px 0;
+    }
+    .package span {
+      color: #ff6600;
+    }
+    .price {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 4px 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: gray;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD9OOUbrBeSFPXZe4O65sgHOOitnFIEQQBDw&s" alt="Garena"></div>
+    <div>Chăm sóc khách hàng</div>
+    <div class="menu-icon">&#9776;</div>
+  </div>
+
+  <div class="banner">
+    <img src="https://viettelmoney.vn/wp-content/uploads/2022/09/trung-tam-nap-the-updating.jpg" alt="banner">
+  </div>
+
+  <div class="content">
+    <div class="game-info">
+      <img src="https://st.download.com.vn/data/image/2025/05/21/game-free-fire-200.png" alt="Free Fire">
+      <div>
+        <strong>Free Fire</strong><br>
+        <small>Vinaphone SMS</small>
+      </div>
+    </div>
+
+    <div class="note">Nạp thẻ Vinaphone vào thuê bao của bạn, chọn mệnh giá bên dưới và thực hiện nhắn tin theo cú pháp tương ứng.</div>
+
+  <div class="package" onclick="goToConfirm('90 + 50MB Freedata*', '10.000đ')">
+    <div>Kim Cương 💎<span>90 + 50MB Freedata*</span></div><div class="price">10.000đ</div>
+  </div>
+  <div class="package" onclick="goToConfirm('210 + 100MB Freedata*', '20.000đ')">
+    <div>Kim Cương 💎<span>210 + 100MB Freedata*</span></div><div class="price">20.000đ</div>
+  </div>
+  <div class="package" onclick="goToConfirm('390 + 250MB Freedata*', '50.000đ')">
+    <div>Kim Cương 💎<span>390 + 250MB Freedata*</span></div><div class="price">50.000đ</div>
+  </div>
+  <div class="package" onclick="goToConfirm('1.740 + 500MB Freedata**', '100.000đ')">
+    <div>Kim Cương 💎<span>1.740 + 500MB Freedata**</span></div><div class="price">100.000đ</div>
+  </div>
+  <div class="package" onclick="goToConfirm('3.900 + 1GB Freedata**', '200.000đ')">
+    <div>Kim Cương 💎<span>3.900 + 1GB Freedata**</span></div><div class="price">200.000đ</div>
+  </div>
+
+    <script>
+      function goToConfirm(goi, gia) {
+        const accountName = prompt("Id Game Của Bạn:");
+        if (!accountName) return;
+        const url = `confirm.html?goi=${encodeURIComponent(goi)}&gia=${encodeURIComponent(gia)}&account=${encodeURIComponent(accountName)}`;
+        window.location.href = url;
+      }
+    </script>
+  <footer>
+    kimcuongre
+  </footer>
+</body>
+</html>
